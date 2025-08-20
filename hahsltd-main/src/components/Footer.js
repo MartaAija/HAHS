@@ -172,6 +172,11 @@ const Footer = () => {
             flex-direction: column;
             gap: 1rem;
           }
+
+          .social-links {
+          display: flex;
+          justify-content: center;
+        }
         }
       `}</style>
     </footer>

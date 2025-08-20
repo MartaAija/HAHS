@@ -34,7 +34,7 @@ def contact():
         # Create email message
         msg = Message(
             subject=f"HAHS Contact Form: {subject}",
-            recipients=['info@hahs.ca']
+            recipients=['marta.aija@inbox.lv']
         )
 
         # Plain text fallback

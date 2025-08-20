@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -32,7 +32,7 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('https://hahs-jxxk.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,21 +70,6 @@ const Contact = () => {
       icon: <FaEnvelope />,
       label: "Email",
       value: "info@hahs.ca"
-    }
-  ];
-
-  const socialLinks = [
-    {
-      icon: <FaInstagram />,
-      label: "Instagram",
-      url: "https://instagram.com/highaltitudeheliservices",
-      color: "#E4405F"
-    },
-    {
-      icon: <FaFacebook />,
-      label: "Facebook",
-      url: "https://facebook.com/highaltitudeheliservices",
-      color: "#1877F2"
     }
   ];
 
