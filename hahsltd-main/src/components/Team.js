@@ -18,7 +18,7 @@ const Team = () => {
     {
       icon: <FaHelicopter />,
       title: "Pilot",
-      description: "Experienced helicopter pilot with extensive flight hours"
+      description: "CHPL - Day VFR with Class 4 Instructor, and BH06, BH12, EC20, EC30, RH22, RH44 Type Ratings"
     },
     {
       icon: <FaWrench />,

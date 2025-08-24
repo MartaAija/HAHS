@@ -52,28 +52,37 @@ const Fleet = () => {
         </motion.div>
 
         <div className="fleet-content">
-          <motion.div
-            className="fleet-image"
-            initial={{ opacity: 0, x: -50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="helicopter-flip-container">
-              <div className="helicopter-flip-card">
-                <div className="helicopter-flip-front">
-                  <FaHelicopter className="helicopter-icon" />
-                </div>
-                <div className="helicopter-flip-back">
-                  <img src="/Heli 1.jpg" alt="Bell 206 JetRanger II" />
-                </div>
-              </div>
-            </div>
-            <div className="helicopter-info">
-              <h3>🚁 BELL 206 JETRANGER II</h3>
-              <p>The Bell 206 JetRanger II is a versatile, single-engine helicopter known for its reliability, 
-                 performance, and safety features. Perfect for both commercial operations and adventure tourism.</p>
-            </div>
-          </motion.div>
+        <motion.div
+        className="fleet-image"
+        initial={{ opacity: 0, x: -50 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <div className="helicopter-video-container">
+          <video
+            src="/Heli.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: "300px",       
+              height: "auto",
+              borderRadius: "12px", 
+              objectFit: "cover",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.3)" 
+            }}
+            className="helicopter-video"
+          />
+        </div>
+        <div className="helicopter-info">
+          <h3>🚁 BELL 206 JETRANGER II</h3>
+          <p>
+            The Bell 206 JetRanger II is a versatile, single-engine helicopter known for its reliability, 
+            performance, and safety features. Perfect for both commercial operations and adventure tourism.
+          </p>
+        </div>
+      </motion.div>
 
           <motion.div
             className="fleet-specs"
