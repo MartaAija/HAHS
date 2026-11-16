@@ -32,15 +32,17 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('https://hahs-jxxk.onrender.com/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const body = new URLSearchParams({
+        'form-name': 'contact',
+        'bot-field': '',
+        ...formData,
+      }).toString();
 
-      const data = await response.json();
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      });
 
       if (response.ok) {
         setSubmitStatus('success');
@@ -122,7 +124,11 @@ const Contact = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit}>
+            <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+              <input type="hidden" name="form-name" value="contact" />
+              <p style={{ display: 'none' }}>
+                <label>Do not fill this out: <input name="bot-field" tabIndex="-1" autoComplete="off" /></label>
+              </p>
               <div className="form-group">
                 <input
                   type="text"
@@ -180,7 +186,7 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                {submitStatus === 'success' ? 'Message sent successfully!' : 'Failed to send message. Please try again.'}
+                {submitStatus === 'success' ? 'Message sent successfully!' : 'Failed to send message. Please call +1 (250) 431-8536 or email info@hahs.ca.'}
               </motion.div>
             )}
           </motion.div>
